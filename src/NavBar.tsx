@@ -15,7 +15,12 @@ function NavBar(){
                 <h3>Login</h3>
 
             </div>
+            <div className="Header">
+                
+            </div>
         </div>
         </>
     )
 }
+
+export default NavBar
