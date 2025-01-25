@@ -1,0 +1,35 @@
+.Header{
+     background-image: url("C:\Users\CTMS\Desktop\Final-project-front-end-\src\assets\photo-1653821355736-0c2598d0a63e.jpeg" );
+     background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+}
+.Header h1{
+    color: white;
+    margin-right: 650px;
+    font-family: Courier, monospace;
+    font-size: 90px;
+}
+.outline{
+    color: white;
+    font-family: "Garamond", Serif;
+    margin-right: 500px;
+    margin-block-start: -79px;
+}
+.tagline{
+    color:rgb(255, 230, 0) ;
+    font-family: "Cursive";
+    font-size: 50px;
+    font-family: "Brush Script MT", cursive;
+    margin-right: 300px;
+    margin-block-start: 9px;
+
+}

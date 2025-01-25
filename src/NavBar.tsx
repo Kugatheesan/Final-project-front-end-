@@ -1,23 +1,22 @@
-// import banner from ''
-
+import banner from './assets/Design 2.png'
+import './style/NavBar.css'
 function NavBar(){
     return(
         <>
-        <div className="first Page">
-            <div className="logoimg">
-                <img alt="" />
-            </div>
+        <div className="nav-Page">
             <div>
-                <h3>Home</h3>
-                <h3>About</h3>
-                <h3>Services</h3>
-                <h3>Booking</h3>
-                <h3>Login</h3>
+                <img src={banner} width={80} />
+                </div>
 
-            </div>
-            <div className="Header">
-                
-            </div>
+                <div>
+                <ul className='nav-include'>
+                    <li><a href="#">Home</a></li>
+                     <li><a href="#">About</a></li>
+                     <li><a href="#">Services</a></li>
+                     <li><a href="#">Booking</a></li>
+                     <li><a href="#">Login</a></li>
+                 </ul>
+                </div>   
         </div>
         </>
     )

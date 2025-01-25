@@ -1,0 +1,46 @@
+.footer{
+    display: flex;
+    height: 400px;
+    background-color: #070707;
+}
+.footer-logo img{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    padding-top: 20px;
+}
+#footer-h1{
+    color: white;
+    font-family: Courier, monospace;
+    margin-top: -30px;
+}
+#footer-h2{
+    display: flex;
+    color: rgb(255, 251, 2);
+    font-family: "Garamond", Serif;
+    margin-top: -40px;
+    margin-left: 50px;
+}
+.fo-link ul,.fo-link a,.fo-link h2{
+     color: white;
+      list-style-type: none;
+      text-align: left;
+      margin-left: 50px;
+      margin-top: 80px;
+}
+.fo-connect{
+    color: white;
+    text-align: left;
+    margin-left: 150px;
+    margin-top: 60px;
+}
+
+.fo-connect a{
+    color: white;
+}
+
+.fo-socialmedia{
+    margin-left: 150px;
+    margin-top: 150px;
+}
+

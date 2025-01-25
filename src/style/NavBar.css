@@ -1,0 +1,15 @@
+.nav-Page{
+    display: flex;
+    background-color:black;
+    color: #ffffff;
+    height: 65px;
+    /* width: 100%; */
+}
+
+.nav-include{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin-left: 550px;
+    list-style-type: none;
+}
