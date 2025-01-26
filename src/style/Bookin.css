@@ -1,0 +1,29 @@
+.booked{
+    width: auto;
+    height: 500px;
+    background-color: rgb(231, 227, 221);
+    padding-top: 100px;
+}
+.booking-box{
+    margin-left: 25%;
+    width: 700px;
+    height: 450px;
+    border-radius: 10px / 30px;
+    background-color: #06073d;
+    border: 1px solid #ddd;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.booking-box h3{
+    color: white;
+    font-size: 40px;
+    font-family: "Sofia", sans-serif;
+}
+.booking-box input{
+    border-radius: 10px;
+    line-height: 2;
+}
+.booking-box button{
+    background-color: green;
+    color: black;
+    font-style: italic;
+}

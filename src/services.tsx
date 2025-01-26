@@ -2,6 +2,7 @@ import './style/services.css'
 import cor from './assets/ser-cor.jpg'
 import fam from './assets/ser-family.jpg'
 import tele from './assets/ser-television.webp'
+
 function Service(){
     return(
         <>
