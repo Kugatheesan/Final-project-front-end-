@@ -1,5 +1,5 @@
 import banner2 from './assets/bunch-flowers-leaves-table.webp'
-import './style/about.css'
+import './style/About.css'
 function About(){
     return(
         <>

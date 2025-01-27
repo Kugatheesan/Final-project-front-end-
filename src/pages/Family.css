@@ -1,0 +1,33 @@
+.isfamily{
+    background-color: rgb(194, 194, 199);
+    background-size: cover;
+    background-position: center;
+}
+.family-Header{
+    margin-bottom: 10px;
+    color: rgb(4, 20, 4);
+}
+.fa-event{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 120px; 
+    max-width: 400px; 
+    margin-left: 150px;
+    margin-top: 50px;
+    padding: 10px; 
+    border-radius: 8px; 
+}
+.fam-wedding img,.fam-anniversary img,.fam-engagements img{
+    width: 400px;
+    border-radius: 8px;
+}
+
+.fam-wedding p,.fam-anniversary p,.fam-engagements p,.fam-engagements p{
+    text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 18px;
+}
+.fam-wedding h3,.fam-anniversary h3,.fam-engagements h3,.fam-engagements h3{
+    font-size: 30px;
+}

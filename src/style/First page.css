@@ -1,8 +1,8 @@
 .Header{
-     background-image: url("C:\Users\CTMS\Desktop\Final-project-front-end-\src\assets\photo-1653821355736-0c2598d0a63e.jpeg" );
+     background-image: url("/home/kugan/Documents/Final Project Front End/src/assets/photo-1653821355736-0c2598d0a63e.jpeg" );
      background-size: cover;
       background-position: center;
-      height: 100vh;
+      height: 80vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -32,4 +32,51 @@
     margin-right: 300px;
     margin-block-start: 9px;
 
+}
+.whatsapp-img{
+    width: 70px;
+    padding-left: 1200px;
+    padding-top: 300px;
+}
+.front-para{
+    background-color: rgb(231, 231, 231);
+    padding-top: 30px;
+    height: 650px;
+
+}
+.front-para p,h2{
+    text-align: start;
+}
+
+.extera-add{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(194, 194, 199);
+}
+.front-page img{
+    width: 300px; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+.extera-add p{
+    text-align: start;
+
+}
+.front-page{
+    box-shadow: 3px 3px 6px  rgb(19, 19, 18);
+    margin-bottom: 8px;
+
+}
+.front-para-one{
+    display: flex;
+    
+}
+.front-para h2,p{
+        margin-left: 10px;
+}
+.front-para-one img{
+    border-radius: 10px;
 }

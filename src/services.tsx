@@ -2,10 +2,12 @@ import './style/services.css'
 import cor from './assets/ser-cor.jpg'
 import fam from './assets/ser-family.jpg'
 import tele from './assets/ser-television.webp'
+import { Link } from 'react-router-dom'
 
 function Service(){
     return(
         <>
+        
         <div className="all-service">
             <div className="ser-head">
                 <h1>OUR SERVICES</h1>
@@ -13,28 +15,29 @@ function Service(){
             <div className="All-event">
 
                 <div className="cop-event">
-                    <a href="">
+                    <Link to="/service/corporate" >
                 <img src={cor} />
                 <h3>Corporate Events</h3>
-                </a>
+                </Link>
                 </div>
                 
                 <div className="fam-event">
-                    <a href="">
+                    <Link to="/service/family">
                 <img src={fam} />
                 <h3>Family Events</h3>
-                </a>
+                </Link>
                 </div>
 
                 
                 <div className="tele-event">
-                    <a href="">
+                    <Link to="/service/television">
                 <img src={tele} height={165} />
                 <h3>Television Events</h3>
-                </a>
+                </Link>
                 </div>
             </div>
         </div>
+       
         </>
     )
 }
