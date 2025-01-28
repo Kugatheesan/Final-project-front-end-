@@ -1,29 +1,76 @@
-.booked{
-    width: auto;
-    height: 500px;
+
+.booked {
+    width: 100%;
+    height: auto;
     background-color: rgb(231, 227, 221);
-    padding-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px; /* Add padding to the bottom for small screens */
 }
-.booking-box{
-    margin-left: 25%;
-    width: 700px;
-    height: 450px;
+
+.booking-box {
+    margin-left: 10%;
+    width: 80%; /* Make the booking box responsive */
+    max-width: 700px;
+    height: auto; /* Allow height to adjust based on content */
     border-radius: 10px / 30px;
     background-color: #06073d;
     border: 1px solid #ddd;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
-.booking-box h3{
+
+.booking-box h3 {
     color: white;
-    font-size: 40px;
+    font-size: 2.5rem; /* Adjust font size for responsiveness */
     font-family: "Sofia", sans-serif;
+    text-align: center; /* Center-align the header */
 }
-.booking-box input{
+
+.booking-box input {
+    width: 100%; /* Make inputs take up full width */
+    padding: 10px;
+    margin: 10px 0;
     border-radius: 10px;
     line-height: 2;
+    font-size: 1rem; /* Adjust font size for readability */
 }
-.booking-box button{
+
+.booking-box button {
+    width: 100%;
+    padding: 10px;
     background-color: green;
     color: black;
     font-style: italic;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Medium devices (tablets, 768px and above) */
+@media (min-width: 768px) {
+    .booking-box {
+        width: 70%; /* Adjust width for tablets */
+        margin-left: 15%;
+    }
+
+    .booking-box h3 {
+        font-size: 2rem; /* Slightly smaller header font size */
+    }
+
+    .booking-box input, .booking-box button {
+        font-size: 1rem; /* Ensure consistent font size */
+    }
+}
+
+/* Large devices (desktops, 1024px and above) */
+@media (min-width: 1024px) {
+    .booking-box {
+        width: 50%; /* Smaller width for large screens */
+        margin-left: 25%;
+    }
+
+    .booking-box h3 {
+        font-size: 2.5rem; /* Restore original font size for desktop */
+    }
 }
