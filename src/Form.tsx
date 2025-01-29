@@ -1,5 +1,5 @@
 import './style/Form.css'
-import UseAuth from '../src/context/auathcontext'
+import { UseAuth } from '../src/context/auathcontext'
 import { useState } from 'react'
 function MyForm(){
     const { register }= UseAuth()
@@ -9,7 +9,10 @@ function MyForm(){
 
     const HandleSumbit=(e:React.FormEvent) =>{
         e.preventDefault()
-        register(username,password,email)
+        register(username,email, password)
+        setusername('');
+        setpassword('');
+        setemail('');
     }
 
     return(
@@ -20,8 +23,8 @@ function MyForm(){
             <form action="" onSubmit={HandleSumbit}>
                 <input type="text" placeholder="Name" id='username' value={username} onChange={(e)=>setusername(e.target.value)}/> <br/> <br />
                 <input type="text" placeholder="E-Mail" id='email' value={email} onChange={(e)=>setemail(e.target.value)}/> <br /> <br />
-                <input type="text" placeholder="Password" id='password' value={password} onChange={(e)=>(e.target.value)}/> <br /> <br />
-                <button >Register</button>
+                <input type="text" placeholder="Password" id='password' value={password} onChange={(e)=>setpassword(e.target.value)}/> <br /> <br />
+                <button>Register</button>
             </form>
             </div>
         </div>

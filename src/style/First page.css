@@ -1,246 +1,241 @@
-/* .Header{
-     background-image: url("/home/kugan/Documents/Final Project Front End/src/assets/photo-1653821355736-0c2598d0a63e.jpeg" );
-     background-size: cover;
-      background-position: center;
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-}
-.Header h1{
-    color: white;
-    margin-right: 650px;
-    font-family: Courier, monospace;
-    font-size: 90px;
-}
-.outline{
-    color: white;
-    font-family: "Garamond", Serif;
-    margin-right: 500px;
-    margin-block-start: -79px;
-}
-.tagline{
-    color:rgb(255, 230, 0) ;
-    font-family: "Cursive";
-    font-size: 50px;
-    font-family: "Brush Script MT", cursive;
-    margin-right: 300px;
-    margin-block-start: 9px;
-
-}
-.whatsapp-img{
-    width: 70px;
-    padding-left: 1200px;
-    padding-top: 300px;
-}
-.front-para{
-    background-color: rgb(231, 231, 231);
-    padding-top: 30px;
-    height: 650px;
-
-}
-.front-para p,h2{
-    text-align: start;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.extera-add{
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    gap: 10px;
-    background-color: rgb(194, 194, 199);
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
-.front-page img{
-    width: 300px; 
-    height: auto; 
-    border-radius: 10px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
-}
-.extera-add p{
-    text-align: start;
 
-}
-.front-page{
-    box-shadow: 3px 3px 6px  rgb(19, 19, 18);
-    margin-bottom: 8px;
-
-}
-.front-para-one{
-    display: flex;
-    
-}
-.front-para h2,p{
-        margin-left: 10px;
-}
-.front-para-one img{
-    border-radius: 10px;
-}*/
-
-   .Header {
-    background-image: url("/home/kugan/Documents/Final Project Front End/src/assets/photo-1653821355736-0c2598d0a63e.jpeg");
-    background-size: cover;
-    background-position: center;
+/* Header Section */
+.Header {
+    background: url("/home/kugan/Documents/Final Project Front End/src/assets/DALL·E 2025-01-29 22.50.36 - A high-quality, elegant event background featuring a luxurious venue setup. The scene includes beautifully arranged tables with floral centerpieces, g.webp") no-repeat center center/cover;
     height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fff;
     text-align: center;
+    color: #fff;
     position: relative;
     z-index: 1;
-}
-
-.Header h1 {
-    color: white;
-    margin: 0 auto;
-    font-family: Courier, monospace;
-    font-size: 90px;
-}
-
-.outline {
-    color: white;
-    font-family: "Garamond", serif;
-    margin: 10px auto;
-}
-
-.tagline {
-    color: rgb(255, 230, 0);
-    font-family: "Brush Script MT", cursive;
-    font-size: 50px;
-    margin: 10px auto;
-}
-
-.whatsapp-img {
-    width: 70px;
-    margin: 20px auto 0;
-}
-
-.front-para {
-    background-color: rgb(231, 231, 231);
-    padding: 30px 10px;
-    height: auto;
-}
-
-.front-para p, .front-para h2 {
-    text-align: start;
-}
-
-.extera-add {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    background-color: rgb(194, 194, 199);
     padding: 20px;
 }
 
+/* Header Text */
+.Header h1 {
+    color: #06073D;
+    font-family: Courier, monospace;
+    font-size: 8vw; /* Responsive font size */
+}
+
+.outline {
+    color: #450439;
+    font-family: "Garamond", serif;
+    font-size: 2.5vw;
+}
+
+.tagline {
+    color: rgb(11, 17, 54);
+    font-family: "Brush Script MT", cursive;
+    font-size: 3vw;
+}
+
+/* WhatsApp Icon */
+.whatsapp {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.whatsapp-img {
+    width: 60px;
+    transition: transform 0.3s;
+}
+
+.whatsapp-img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive WhatsApp */
+@media (max-width: 768px) {
+    .whatsapp-img {
+        width: 40px;
+    }
+}
+
+/* Information Sections */
+.front-para {
+    background-color: rgb(231, 231, 231);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.front-para h2, .front-para h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.front-para-one, .front-para-two {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.front-para-one p, .front-para-two p {
+    flex: 1;
+    text-align: justify;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.front-para-one img, .front-para-two img {
+    width: 40%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .front-para-one, .front-para-two {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .front-para-one p, .front-para-two p {
+        max-width: 100%;
+    }
+
+    .front-para-one img, .front-para-two img {
+        width: 80%;
+    }
+}
+
+/* Event Sections */
+.extera-add {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgb(194, 194, 199);
+    padding: 40px 20px;
+}
+
+.front-page {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.front-page:hover {
+    transform: scale(1.05);
+}
+
+/* Image Styling */
 .front-page img {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.extera-add p {
-    text-align: start;
+/* Text Styling */
+.front-page h3 {
+    font-size: 20px;
+    color: #333;
+    margin-top: 15px;
 }
 
-.front-page {
-    box-shadow: 3px 3px 6px rgb(19, 19, 18);
-    margin-bottom: 8px;
-    padding: 10px;
-    text-align: center;
-    flex: 1;
-    min-width: 280px;
+.front-page p {
+    text-align: justify;
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
 }
 
-.front-para-one {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+/* Read More Link */
+.front-page a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.front-para h2, .front-para p {
-    margin-left: 10px;
+.front-page a:hover {
+    color: #0056b3;
 }
 
-.front-para-one img {
-    border-radius: 10px;
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-}
-
-/* Media Queries */
-@media (max-width: 1200px) {
-    .Header h1 {
-        font-size: 70px;
-    }
-    .tagline {
-        font-size: 40px;
-    }
-    .whatsapp-img {
-        margin-top: 10px;
-        width: 60px;
-    }
-}
-
+/* Responsive Layout */
 @media (max-width: 768px) {
-    .Header {
-        height: 60vh;
-    }
-    .Header h1 {
-        font-size: 50px;
-    }
-    .tagline {
-        font-size: 30px;
-    }
-    .front-para {
-        padding: 20px;
-    }
     .extera-add {
-        flex-direction: column;
-    }
-    .front-para-one {
         flex-direction: column;
         align-items: center;
     }
-    .front-page img {
-        max-width: 100%;
+}
+
+/* Header Responsiveness */
+@media (max-width: 1024px) {
+    .Header {
+        height: 60vh;
     }
-    .whatsapp-img {
-        margin-top: 5px;
-        width: 50px;
+
+    .Header h1 {
+        font-size: 6vw;
+    }
+
+    .tagline {
+        font-size: 3vw;
     }
 }
 
+/* Small Screens */
 @media (max-width: 480px) {
     .Header {
         height: 50vh;
     }
+
     .Header h1 {
-        font-size: 40px;
+        font-size: 5vw;
     }
+
     .outline {
-        font-size: 18px;
+        font-size: 1.8vw;
     }
+
     .tagline {
-        font-size: 20px;
+        font-size: 2.5vw;
     }
+
     .whatsapp-img {
         width: 40px;
     }
+
     .front-para h2, .front-para p {
         margin: 5px 0;
-    }
-    .front-page {
-        text-align: center;
     }
 }

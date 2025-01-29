@@ -11,16 +11,21 @@ function NavBar(){
 
                 <div>
                 <ul className='nav-include'>
-                    <li><Link to='/home'>Home</Link></li>
+                     <li><Link to='/home'>Home</Link></li>
                      <li><Link to='/about'>About</Link></li>
                      <li><Link to='/service'>Services</Link></li>
                      <li><Link to='booking'>Booking</Link></li>
-                     <li><Link to='login'>Login</Link></li>
-                 </ul>
-                </div>      
+                     <li><Link to='login'>Register</Link></li>
+                     </ul>  
+                     </div>    
+                     <div className='nav-center'>
+                    <button> <li><Link to='signin'>Sign in</Link></li> </button>
+                 
+                    </div>
+                 
         </div>
         </>
     )
-}
+};
 
 export default NavBar

@@ -1,36 +1,20 @@
-/* .nav-Page{
-    display: flex;
-    background-color:black;
-    color: #ffffff;
-    height: 65px;
-    /* width: 100%;
-} */
-
-/* .nav-include{
-    display: flex;
-    justify-content: space-between;
-    width: 600px;
-    margin-left: 550px;
-    list-style-type: none;
-} */
-
+/* General Styles */
 .nav-Page {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: black;
     color: #ffffff;
-    height: 65px;
-    padding: 0 20px;
+    padding: 10px 20px;  
+    flex-wrap: wrap;
 }
 
 .nav-Page img {
-    width: 60px; /* Adjusted for responsiveness */
+    width: 100px;
 }
 
 .nav-include {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 20px;
     list-style-type: none;
@@ -39,7 +23,7 @@
 }
 
 .nav-include li {
-    font-size: 16px;
+    font-size: 25px;
 }
 
 .nav-include a {
@@ -49,49 +33,65 @@
 }
 
 .nav-include a:hover {
-    color: rgb(255, 230, 0); /* Adds a hover effect */
+    color: rgb(255, 230, 0);
+}
+
+.nav-center button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 23px;
+}
+
+.nav-center button:hover {
+    background-color: rgb(255, 230, 0);
+    color: black;
 }
 
 /* Media Queries */
 @media (max-width: 1024px) {
+    .nav-Page img {
+        width: 80px;
+    }
     .nav-include {
-        width: auto;
         gap: 15px;
     }
-
     .nav-include li {
-        font-size: 14px;
-    }
-
-    .nav-Page img {
-        width: 50px;
+        font-size: 16px;
     }
 }
 
 @media (max-width: 768px) {
     .nav-Page {
         flex-direction: column;
-        height: auto;
-        padding: 10px;
+        align-items: center;
+        text-align: center;
     }
-
     .nav-include {
         flex-direction: column;
-        align-items: center;
         gap: 10px;
+        margin-top: 10px;
     }
-
     .nav-include li {
         font-size: 16px;
+    }
+    .nav-center {
+        margin-top: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .nav-Page img {
-        width: 40px;
+        width: 60px;
     }
-
     .nav-include li {
         font-size: 14px;
+    }
+    .nav-center button {
+        font-size: 14px;
+        padding: 4px 8px;
     }
 }
