@@ -1,5 +1,5 @@
-
 .booked {
+    padding-left: 150px;
     width: 100%;
     height: auto;
     background-color: rgb(231, 227, 221);
@@ -51,7 +51,7 @@
 @media (min-width: 768px) {
     .booking-box {
         width: 70%; /* Adjust width for tablets */
-        margin-left: 15%;
+        margin-left: 20%;
     }
 
     .booking-box h3 {

@@ -1,33 +1,121 @@
-.isfamily{
+.isfamily {
     background-color: rgb(194, 194, 199);
     background-size: cover;
     background-position: center;
+    padding: 20px; /* Add padding for spacing */
 }
-.family-Header{
-    margin-bottom: 10px;
+
+.family-Header {
+    text-align: center;
+    margin-bottom: 20px;
     color: rgb(4, 20, 4);
+    font-size: 2rem;
 }
-.fa-event{
+
+/* Adjusting grid layout for different screen sizes */
+.fa-event {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 120px; 
-    max-width: 400px; 
-    margin-left: 150px;
-    margin-top: 50px;
-    padding: 10px; 
-    border-radius: 8px; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 40px; /* Reduce gap for better spacing */
+    max-width: 90%;
+    margin: 0 auto; /* Center content */
+    padding: 10px;
 }
-.fam-wedding img,.fam-anniversary img,.fam-engagements img{
-    width: 400px;
+
+.fam-wedding, .fam-anniversary, .fam-birthday, .fam-engagements {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.fam-wedding img, 
+.fam-anniversary img, 
+.fam-birthday img, 
+.fam-engagements img {
+    width: 100%; /* Make images responsive */
+    max-width: 400px; /* Prevent images from becoming too large */
+    height: auto;
     border-radius: 8px;
 }
 
-.fam-wedding p,.fam-anniversary p,.fam-engagements p,.fam-engagements p{
+/* Styling text */
+.fam-wedding p, 
+.fam-anniversary p, 
+.fam-birthday p, 
+.fam-engagements p {
     text-align: start;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
-    font-size: 18px;
+    font-size: 1rem;
 }
-.fam-wedding h3,.fam-anniversary h3,.fam-engagements h3,.fam-engagements h3{
-    font-size: 30px;
+
+.fam-wedding h3, 
+.fam-anniversary h3, 
+.fam-birthday h3, 
+.fam-engagements h3 {
+    text-align: start;
+    font-size: 1.8rem;
+    margin-top: 10px;
+    color: rgb(49, 6, 37);
+}
+
+/* Button styling */
+.family-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.family-button button {
+    padding: 12px 24px;
+    background-color: green;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.family-button button:hover {
+    background-color: darkgreen;
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+    .fa-event {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .fam-wedding img, 
+    .fam-anniversary img, 
+    .fam-birthday img, 
+    .fam-engagements img {
+        max-width: 350px;
+    }
+}
+
+/* Small Screens (Phones) */
+@media (max-width: 768px) {
+    .family-Header {
+        font-size: 1.5rem;
+    }
+
+    .fa-event {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .fam-wedding img, 
+    .fam-anniversary img, 
+    .fam-birthday img, 
+    .fam-engagements img {
+        max-width: 100%;
+    }
+
+    .family-button button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
 }

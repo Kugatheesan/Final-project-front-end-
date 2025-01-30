@@ -1,62 +1,155 @@
-.sec-page {
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(240, 240, 240);
+}
+
+.container {
     display: flex;
-    flex-direction: column; /* Default for small screens */
     align-items: center;
-    padding-top: 50px;
-    background-color: rgb(194, 194, 199);
-    height: auto; /* Adjust height for smaller screens */
+    justify-content: center;
+    background: rgb(202, 199, 199);
+    width: 100%;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 50px;
+    flex-wrap: wrap;
+    height: auto; /* Changed to auto for better flexibility */
 }
 
-.para {
-    width: 90%; /* Adjust width for smaller screens */
-    text-align: center; /* Center-align text for small screens */
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+/* Image Styling */
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin-bottom: 150px;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 450px; /* Controls max size */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Text Section Styling */
+.text-container {
+    flex: 1;
+    background: #0b3c4d;
+    color: white;
+    padding: 30px;
+    max-width: 400px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.text-container h2 {
+    font-size: 24px;
     font-weight: bold;
-    margin: 20px auto; /* Center margin for small screens */
-    color: black;
+    margin-bottom: 15px;
 }
 
-.image img {
-    border: 2px solid red;
-    border-radius: 80px 20px;
-    width: 80%; /* Adjust width for small screens */
-    max-width: 400px; /* Ensure it doesn't grow too large */
-    height: auto; /* Maintain aspect ratio */
-    margin-top: 30px;
+.text-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-/* Medium devices (tablets, 768px and above) */
-@media (min-width: 768px) {
-    .sec-page {
-        flex-direction: row; /* Side-by-side layout for larger screens */
-        justify-content: center;
-        height: 65vh; /* Original height for medium and larger screens */
+.button {
+    display: inline-block;
+    background: #e91e63;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: #c2185b;
+}
+
+/* Responsive Design */
+
+/* Tablets (Max Width: 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
     }
 
-    .para {
-        width: 300px;
-        text-align: start;
-        margin-left: 50px;
-        margin-top: 100px;
+    .image-container img {
+        max-width: 80%;
     }
 
-    .image img {
-        width: 400px;
-        height: 50vh;
-        margin-left: 0; /* Align properly for medium screens */
+    .text-container {
+        max-width: 90%;
     }
 }
 
-/* Large devices (desktops, 1024px and above) */
-@media (min-width: 1024px) {
-    .para {
-        margin-left: 180px;
-        width: 350px; /* Slightly larger width for text */
+/* Mobile Devices (Max Width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
     }
 
-    .image img {
-        width: 400px;
-        height: 50vh;
-        margin-left: 150px; /* Restore margin for larger screens */
+    .image-container img {
+        max-width: 85%;
+    }
+
+    .text-container {
+        padding: 20px;
+    }
+
+    .button {
+        padding: 10px 20px;
+    }
+}
+
+/* Small Mobile (Max Width: 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .image-container img {
+        max-width: 100%;
+    }
+
+    .text-container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .text-container h2 {
+        font-size: 20px;
+    }
+
+    .text-container p {
+        font-size: 14px;
+    }
+
+    .button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Extra Small Devices (Max Width: 320px) */
+@media (max-width: 320px) {
+    .text-container h2 {
+        font-size: 18px; /* Smaller heading for very small screens */
+    }
+
+    .text-container p {
+        font-size: 12px; /* Smaller paragraph text */
+    }
+
+    .button {
+        padding: 6px 12px; /* Adjust button size */
+        font-size: 12px; /* Adjust button text size */
     }
 }
