@@ -6,22 +6,40 @@ import MyForm from './Form'
 import Book from './Booking'
 import Footer from './Footer'
 import Service from './services'
+import {  Route, Routes } from "react-router-dom";
 import Corporate from './pages/corporate '
+import Family from './pages/Family'
+import Television from './pages/Television '
 
 function App(){
     return(
-        <>
-        <div>
-            <NavBar/>
-            <First/>
-            <About/>
-            <Service/>
-            <Corporate/>
-            <MyForm/>
-            <Book/>
+    <>
+    <NavBar/>
+        <Routes>
+         <Route path='/home' element={<First/>} />
+         <Route path='about' element={<About/>} />
+         <Route path='service' element={<Service/>}/>
+         <Route path='booking' element={<Book/>}/>
+         <Route path='login' element={<MyForm/>}/>
+         <Route path='service/corporate' element={<Corporate/>}/>
+         <Route path='/service/family' element={<Family/>}/>
+         <Route path='/service/television' element={<Television/>}/>
+         </Routes>
+      
             <Footer/>
-        </div>
-        </>
+    </>
+       
+        // <div>
+        //     <NavBar/>
+        //     <First/>
+        //     <About/>
+        //     <Service/>
+        //     <Corporate/>
+        //     <MyForm/>
+        //     <Book/>
+          
+        // </div>
+        
     )
 }
 

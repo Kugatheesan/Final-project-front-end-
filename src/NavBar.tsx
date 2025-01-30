@@ -1,5 +1,6 @@
 import banner from './assets/Design 2.png'
 import './style/NavBar.css'
+import { Link } from 'react-router-dom'
 function NavBar(){
     return(
         <>
@@ -10,13 +11,13 @@ function NavBar(){
 
                 <div>
                 <ul className='nav-include'>
-                    <li><a href="#">Home</a></li>
-                     <li><a href="#">About</a></li>
-                     <li><a href="#">Services</a></li>
-                     <li><a href="#">Booking</a></li>
-                     <li><a href="#">Login</a></li>
+                    <li><Link to='/home'>Home</Link></li>
+                     <li><Link to='/about'>About</Link></li>
+                     <li><Link to='/service'>Services</Link></li>
+                     <li><Link to='booking'>Booking</Link></li>
+                     <li><Link to='login'>Login</Link></li>
                  </ul>
-                </div>   
+                </div>      
         </div>
         </>
     )

@@ -6,6 +6,7 @@ import './corporate.css'
 function Corporate(){
     return(
         <>
+       
         <div className="iscorporate">
             <div className="corporate-Header">
                 <h1>Corporate Events</h1>
@@ -42,6 +43,7 @@ function Corporate(){
             </div>
     
         </div>
+     
         </>
     )
 }
