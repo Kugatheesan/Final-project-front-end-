@@ -1,16 +1,19 @@
 import './style/signin.css'
 import { UseAuth } from './context/auathcontext'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 function Signin(){
     const { signin }= UseAuth()
             const [username,setusername]= useState<string>('')
             const [password,setpassword]= useState<string>('')
-    
+    const Navigate = useNavigate()
         const HandleSumbit=(e:React.FormEvent) =>{
             e.preventDefault()
             signin(username, password)
             setusername('');
             setpassword('');
+
+            Navigate('/')
         }
     return(
         <>

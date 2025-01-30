@@ -1,11 +1,13 @@
 import './style/Form.css'
 import { UseAuth } from '../src/context/auathcontext'
 import { useState } from 'react'
+import {  useNavigate } from 'react-router-dom'
 function MyForm(){
     const { register }= UseAuth()
         const [username,setusername]= useState<string>('')
         const [password,setpassword]= useState<string>('')
         const [email,setemail]= useState<string>('')
+        const Navigate = useNavigate()
 
     const HandleSumbit=(e:React.FormEvent) =>{
         e.preventDefault()
@@ -13,6 +15,8 @@ function MyForm(){
         setusername('');
         setpassword('');
         setemail('');
+
+        Navigate('/')
     }
 
     return(

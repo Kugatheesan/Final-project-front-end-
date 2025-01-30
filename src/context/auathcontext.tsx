@@ -1,5 +1,6 @@
 import React, {  createContext, useContext, useState, ReactNode }  from "react";
 import axios from "axios";
+import { Navigate, redirect } from "react-router-dom";
 
 interface User{
     username:string;
@@ -32,7 +33,8 @@ export const Authprovider:React.FC<{children:ReactNode }> = ({children})=>{
           password,
           withCredentials: true,
         })
-        console.log("registerUser:", response)
+        console.log("registerUser:", response);
+        redirect('/home')
         
       }
       catch(error:any)
@@ -47,6 +49,7 @@ export const Authprovider:React.FC<{children:ReactNode }> = ({children})=>{
         username,
          password
       })
+      
       console.log("loginUser:", response)
     }
     catch(error:any){
@@ -60,7 +63,7 @@ export const Authprovider:React.FC<{children:ReactNode }> = ({children})=>{
   };
 
   return (
-    <AuthContext.Provider value={{ user, register, signin, signout }}>  {/* ✅ **Added 'user' and 'loading' here** */}
+    <AuthContext.Provider value={{ user, register, signin, signout }}>  
     {children}
 </AuthContext.Provider>
   );
