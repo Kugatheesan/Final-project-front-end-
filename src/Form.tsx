@@ -2,6 +2,7 @@ import './style/Form.css'
 import { UseAuth } from '../src/context/auathcontext'
 import { useState } from 'react'
 import {  useNavigate } from 'react-router-dom'
+
 function MyForm(){
     const { register }= UseAuth()
         const [username,setusername]= useState<string>('')
