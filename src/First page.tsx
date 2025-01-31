@@ -6,11 +6,19 @@ import stress from './assets/lassana-flora-weddings-sri-lanka.webp'
 import para1 from './assets/Planning-1.webp'
 import para2 from './assets/time-management-dreamstime.jpg'
 import { Link } from 'react-router-dom'
+// import back1 from './assets/CORP+RATE+1.png'
+// import back2 from './assets/Events_8.jpg'
+// import back3 from './assets/photo-1653821355736-0c2598d0a63e.jpeg'
 
 function First(){
     return(
         <>
             <div className="Header">
+             <div className="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div> 
                 <h1>Apex</h1>
                 <h2 className='outline'>Event Designs</h2>
                 <h2 className='tagline'>Turning Moments into Memories.</h2>
@@ -21,7 +29,39 @@ function First(){
                </a> 
             </div>
                </div>
-               
+
+
+
+{/* 
+<div id="carouselExampleIndicators" className="Header" data-bs-ride="carousel">
+  <div className="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img src={back1} className="d-block w-100" alt="..."/>
+    </div>
+    <div className="carousel-item">
+      <img src={back2} className="d-block w-100" alt="..."/>
+    </div>
+    <div className="carousel-item">
+      <img src={back3} className="d-block w-100" alt="..."/>
+    </div>
+  </div>
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
+  </button>
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
+  </button>
+</div>
+ */}
+
+
                <div className="front-para">
     <h2>What is Event Planning?</h2>
     <div className="front-para-one">

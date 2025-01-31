@@ -32,9 +32,9 @@ function Footer(){
                 <h3>Chunnakam south Chunnakam ,Jaffna</h3>
             </div>
             <div className="fo-socialmedia">
-                <a href="" target="_blank" ><img src={banner12} /></a>
-                <a href="" target="_blank"><img src={banner13} /></a>
-                <a href="" target="_blank"><img src={banner14} /></a>
+                <a href="https://www.instagram.com/kuga_theesan19?igsh=MXVqd2RraDlwMjUybQ%3D%3D&utm_source=qr" target="_blank" ><img src={banner12} /></a>
+                <a href="https://www.facebook.com/share/18TXwanQG3/?mibextid=wwXIfr" target="_blank"><img src={banner13} /></a>
+                <a href="https://youtube.com/@vigineswarankugatheesan?si=lUVGoyLJFopKWIZty" target="_blank"><img src={banner14} /></a>
 
             </div>
         </div>
