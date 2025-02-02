@@ -24,7 +24,7 @@ function First(){
                 <h2 className='tagline'>Turning Moments into Memories.</h2>
 
                 <div className='whatsapp'>
-            <a href="">
+            <a href="https://wa.me/94760462103?text=Hello%20there!">
                 <img src={whatsapp} className='whatsapp-img'/>
                </a> 
             </div>

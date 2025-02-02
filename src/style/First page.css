@@ -85,9 +85,11 @@ body {
 
 /* WhatsApp Icon */
 .whatsapp {
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     bottom: 20px;
     right: 20px;
+
 }
 
 .whatsapp-img {
