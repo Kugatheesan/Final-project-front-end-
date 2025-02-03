@@ -3,6 +3,7 @@ import banner4 from './Bangkok-1.webp'
 import banner5 from './group-friends-making-barbecue-nature-260nw-1100824838.webp'
 import banner15 from './1690199856774.jpeg'
 import './corporate.css'
+import { Link } from 'react-router-dom'
 function Corporate(){
     return(
         <>
@@ -39,7 +40,7 @@ function Corporate(){
                 </div>
             </div>
             <div className="coporate-but">
-                <button>Book Now!</button>
+               <Link to="/booking" > <button>Book Now!</button></Link>
             </div>
     
         </div>

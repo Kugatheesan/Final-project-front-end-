@@ -31,7 +31,6 @@ export const Authprovider:React.FC<{children:ReactNode }> = ({children})=>{
           username,
           email,
           password,
-          withCredentials: true,
         })
         console.log("registerUser:", response);
         redirect('/home')
@@ -39,7 +38,7 @@ export const Authprovider:React.FC<{children:ReactNode }> = ({children})=>{
       }
       catch(error:any)
       {
-        console.log(error)
+        console.log(error.response?.data || error.message);      
       }
   }  
 
@@ -69,9 +68,6 @@ export const Authprovider:React.FC<{children:ReactNode }> = ({children})=>{
   );
   };
 
-
-
-
 export const UseAuth =():AuthContexType => {
   const context = useContext(AuthContext);
 
@@ -80,6 +76,7 @@ export const UseAuth =():AuthContexType => {
   }
   return context;
 };
+
 
 
 

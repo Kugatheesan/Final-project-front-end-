@@ -3,6 +3,7 @@ import banner10 from './empty-runway-stage-neon-lights-d-rendering-338542442.web
 import banner11 from './gameshow-7-1-66f2fa982de31.jpg'
 import music from './20220912-tips-nonton-konser-pertama-kali-banner.jpg'
 import "./television.css"
+import { Link } from 'react-router-dom'
 function Television(){
     return(
         <>
@@ -37,7 +38,7 @@ function Television(){
                 </div>
             </div>
             <div className="television-button">
-                <button>Book Now!</button>
+            <Link to="/booking" > <button>Book Now!</button></Link>
             </div>
 
         </div>
