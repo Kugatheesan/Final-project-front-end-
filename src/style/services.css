@@ -1,87 +1,100 @@
 .all-service {
-    background-color: rgb(194, 194, 199);       
-    padding: 20px 0; /* Add padding for smaller screens */
-    height: auto; /* Allow height to adjust dynamically */
+    background-color: rgb(194, 194, 199);
+    padding: 20px 0;
+    text-align: center;
 }
 
 .ser-head {
-    width: 90%; /* Adjust width for smaller screens */
-    max-width: 390px; /* Keep it capped for larger screens */
-    margin: 0 auto; /* Center the header */
+    width: 90%;
+    max-width: 390px;
+    margin: 0 auto;
     border-radius: 50px 8px;
     color: rgb(49, 6, 37);
-    text-align: center; /* Center-align the text */
-    padding: 10px 0; /* Add padding for better spacing */
+    text-align: center;
+    padding: 10px 0;
 }
 
 .All-event {
     display: flex;
-    flex-wrap: wrap; /* Enable wrapping for small screens */
-    justify-content: center; /* Center items for smaller devices */
-    gap: 20px; /* Add spacing between items */
-    /* padding-bottom: 100px; */
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
-.cop-event, .fam-event, .tele-event {
-    width: 90%; /* Default width for smaller screens */
-    max-width: 300px; /* Cap width for larger screens */
-    height: auto; /* Allow height to adjust dynamically */
+.event-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.event-card {
+    width: 100%;
+    max-width: 300px;
     background-color: rgb(49, 6, 37);
-    /* border-radius: 20px 70px; */
     border: 1px solid #ccc;
     box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.2);
-    text-align: center; /* Center-align text and images */
-    padding: 10px 0; /* Add padding for consistency */
-    
+    text-align: center;
+    padding: 10px 0;
+    transition: transform 0.3s ease-in-out;
 }
 
-.cop-event img, .fam-event img, .tele-event img {
-    width: 80%; /* Adjust image width for smaller screens */
-    max-width: 250px; /* Cap width for larger screens */
-    /* border-radius: 20px 70px; */
+.event-card:hover {
+    transform: scale(1.05);
+}
+
+.event-card img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
     padding-top: 10px;
 }
 
-.cop-event h3, .fam-event h3, .tele-event h3 {
+.event-card h3 {
     color: rgb(233, 219, 32);
     margin-top: 10px;
-    font-size: 1rem; /* Adjust font size for readability */
+    font-size: 1rem;
     text-align: center;
 }
 
-/* Medium devices (tablets, 768px and above) */
-@media (min-width: 768px) {
-    .All-event {
-        flex-wrap: nowrap; /* Single row for medium screens */
-        justify-content: space-around;
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .event-container {
+        flex-direction: row;
+        justify-content: center;
     }
 
-    .cop-event, .fam-event, .tele-event {
-        width: 250px; /* Restore original width */
-        height: 250px;
-    }
-
-    .cop-event img, .fam-event img, .tele-event img {
-        width: 200px; /* Restore image size */
+    .event-card {
+        width: 45%;
+        max-width: 250px;
     }
 }
 
-/* Large devices (desktops, 1024px and above) */
-@media (min-width: 1024px) {
-    .ser-head {
-        width: 390px; /* Restore original width */
+@media (max-width: 768px) {
+    .event-container {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .All-event {
-        margin-top: 220px; /* Restore original margin */
+    .event-card {
+        width: 90%;
+        max-width: 400px;
     }
 
-    .cop-event, .fam-event, .tele-event {
-        width: 300px; /* Restore original width */
-        height: 250px; /* Restore original height */
+    .event-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-card {
+        width: 100%;
+        max-width: 320px;
     }
 
-    .cop-event img, .fam-event img, .tele-event img {
-        width: 250px; /* Restore original image size */
+    .ser-head h1 {
+        font-size: 1.5rem;
     }
 }

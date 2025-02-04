@@ -3,6 +3,7 @@ import banner7 from './7ebcfbd039cd9cf46744d2aabec22402.jpg'
 import banner8 from './81FirJI1XhL._UF350,350_QL80_.jpg'
 import Engage from './843a7077856a0ab6032a7dff8669c9ae.jpg'
 import './Family.css'
+import { Link } from 'react-router-dom'
 function Family(){
     return(
         <>
@@ -38,7 +39,7 @@ function Family(){
             </div>
 
             <div className="family-button">
-                <button>Book Now!</button>
+            <Link to="/booking" > <button>Book Now!</button></Link>
             </div>
 
         </div>
