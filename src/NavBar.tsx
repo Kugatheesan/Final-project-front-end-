@@ -19,7 +19,7 @@ function NavBar(){
                      </ul>  
                      </div>    
                      <div className='nav-center'>
-                    <button> <li><Link to='signin'>Sign in</Link></li> </button>
+                    <button> <Link to='signin'>Sign in</Link> </button>
                  
                     </div>
                  
