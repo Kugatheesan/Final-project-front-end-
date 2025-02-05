@@ -45,7 +45,7 @@ export const ServiceProvider: React.FC<{ children: ReactNode }> = ({ children })
         description,
         categories,
       });
-      setServices((prev) => [...prev, response.data.service]); // Update state
+      setServices((prev) => [...prev, response.data.service]);                                    
     } catch (error) {
       console.error("Error creating service:", error);
     }
@@ -55,7 +55,7 @@ export const ServiceProvider: React.FC<{ children: ReactNode }> = ({ children })
   const deleteService = async (id: number) => {
     try {
       await axios.delete(`http://localhost:3000/api/services/${id}`);
-      setServices((prev) => prev.filter((service) => service.id !== id)); // Remove from state
+      setServices((prev) => prev.filter((service) => service.id !== id)); 
     } catch (error) {
       console.error("Error deleting service:", error);
     }

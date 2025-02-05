@@ -24,7 +24,7 @@ export const Authprovider:React.FC<{children:ReactNode }> = ({children})=>{
    
     if(!username || !password || !email) {
  console.log('fill the fields')
- return;
+ return;  
     }
       try{
         const response =await axios.post('http://localhost:3000/api/register',    {
