@@ -35,12 +35,21 @@
     font-size: 1rem; /* Adjust font size for readability */
 }
 
+
+.booking-box select {
+    width: 100%; /* Make inputs take up full width */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    line-height: 2;
+    font-size: 1rem; /* Adjust font size for readability */
+}
+
 .booking-box button {
     width: 100%;
     padding: 10px;
     background-color: green;
-    color: black;
-    font-style: italic;
+    color: rgb(255, 255, 255);
     font-size: 1.2rem;
     border-radius: 10px;
     border: none;

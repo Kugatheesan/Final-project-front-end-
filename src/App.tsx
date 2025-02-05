@@ -31,17 +31,7 @@ function App() {
             <Footer />
         </>
 
-        // <div>
-        //     <NavBar/>
-        //     <First/>
-        //     <About/>
-        //     <Service/>
-        //     <Corporate/>
-        //     <MyForm/>
-        //     <Book/>
-
-        // </div>
-
+    
     )
 }
 
