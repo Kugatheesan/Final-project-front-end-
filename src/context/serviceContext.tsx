@@ -9,28 +9,52 @@ interface Service{
 }
 
 
-interface Category{
+interface Category{ 
     id:number;
     name:string;
     description:string;  
 }
 
-interface ServiceContextType {
+export interface ServiceContextType {
   services: Service[];
+  serviceInfo: Service;
+  fetchServiceById: (serviceId: number) => Promise<Service | null>;
   fetchServices: () => Promise<void>;
   createService: (name: string, description: string, categories: string[]) => Promise<void>;
   deleteService: (id: number) => Promise<void>;
 }
 
-const ServiceContext = createContext<ServiceContextType | undefined>(undefined);
+const defaultService: Service = {
+  id: 0,
+  name: "",
+  categories: [],
+};
+
+export const ServiceContext = createContext<ServiceContextType>({
+  services: [],
+  serviceInfo: defaultService,
+  fetchServiceById: async () => {
+    throw new Error("fetchServiceById not implemented.");
+  },
+  fetchServices: async () => {
+    throw new Error("fetchServices not implemented.");
+  },
+  createService: async () => {
+    throw new Error("createService not implemented.");
+  },
+  deleteService: async () => {
+    throw new Error("deleteService not implemented.");
+  },
+});
 
 export const ServiceProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [services, setServices] = useState<Service[]>([]);
+  const [serviceInfo, setService] = useState<Service>();
 
   
   const fetchServices = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/services");
+      const response = await axios.get("http://localhost:3000/api/services", { withCredentials: true });
       setServices(response.data);
     } catch (error) {
       console.error("Error fetching services:", error);
@@ -61,8 +85,19 @@ export const ServiceProvider: React.FC<{ children: ReactNode }> = ({ children })
     }
   };
 
+  //service with category
+  const fetchServiceById = async (serviceId: number) => {
+    try {
+      const response = await axios.get(`http://localhost:3000/api/services/service/${serviceId}`, { withCredentials: true });
+      setService(response.data);
+    } catch (error) {
+      console.error(`Error fetching service with ID ${serviceId}:`, error);
+      return null;
+    }
+  };
+
   return (
-    <ServiceContext.Provider value={{ services, fetchServices, createService, deleteService }}>
+    <ServiceContext.Provider value={{ services, serviceInfo, fetchServices, createService, deleteService ,fetchServiceById }}>
       {children}
     </ServiceContext.Provider>
   );

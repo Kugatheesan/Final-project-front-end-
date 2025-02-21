@@ -13,13 +13,17 @@ interface AuthContexType{
     register:(username:string,email:string, password:string) => Promise<void>
     signin:(username:string,password:string ) => Promise<void>
     signout:() => Promise<void>
+    profile: { username: string }
+    getUser: () => Promise<void>
+    ForgotPassword: (email: string) => Promise<string>; 
+    ResetPassword: (newPassword: string) => Promise<string>; 
 }
 const AuthContext= createContext<AuthContexType|undefined>(undefined)
 
 export const Authprovider:React.FC<{children:ReactNode }> = ({children})=>{
     const [user ,setUser]=useState<User|null>(null);
-
-
+    const [ profile, setProfile] = useState({ username: '' });
+    // const [lodaing, setLoading] = useState(false)
   const register = async (username:string,email:string,password:string)=>{
    
     if(!username || !password || !email) {
@@ -27,7 +31,7 @@ export const Authprovider:React.FC<{children:ReactNode }> = ({children})=>{
  return;  
     }
       try{
-        const response =await axios.post('http://localhost:3000/api/register',    {
+        const response =await axios.post('http://localhost:3000/api/users/register',    {
           username,
           email,
           password,
@@ -42,12 +46,34 @@ export const Authprovider:React.FC<{children:ReactNode }> = ({children})=>{
       }
   }  
 
-  const signin = async (username:string,password:string) => {  
+  const getUser = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/api/users/profile", {
+        withCredentials: true,
+      });
+
+      if (response.data.username) {
+        setProfile({ username: response.data.username });
+      }
+    } catch (error: any) {
+      console.log(error.response?.data || error.message);
+      setProfile({ username: "" }); // Reset profile on error
+    }
+  };
+
+  const signin = async (username:string,password:string) => { 
+   
     try{
-      const response = await axios.post('http://localhost:3000/api/login', {
+      // const loading =  setLoading(true)
+      // console.log(loading)
+      const response = await axios.post('http://localhost:3000/api/users/login', {
         username,
          password
+      }, {
+        withCredentials: true
       })
+    //  const loding1 =  setLoading(false)
+    //  console.log(loding1)
       
       console.log("loginUser:", response)
     }
@@ -57,12 +83,54 @@ export const Authprovider:React.FC<{children:ReactNode }> = ({children})=>{
   }
 
   const signout = async() => {
-    setUser(null);
-    localStorage.removeItem('token');
+    try {
+      const response = await axios.post("http://localhost:3000/api/users/logout", {}, {
+        withCredentials: true,
+      });
+      if (response.status === 200) {
+        setUser(null);
+        setProfile({ username: '' })
+      }
+
+    } catch (error: any) {
+      console.log(error.response?.data || error.message);
+      setProfile({ username: "" }); // Reset profile on error
+    }
+
+  };
+
+  const ForgotPassword = async (email: string): Promise<string> => {
+    try {
+      const res = await fetch("http://localhost:3000/api/users/forgot-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.text();
+      return data;
+    } catch (error) {
+      return "Error sending reset link.";
+    }
+  };
+  
+  
+  const ResetPassword = async (newPassword: string): Promise<string> => {
+    try {
+      const res = await fetch("http://localhost:3000/api/users/reset-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include", // Include cookies for token
+        body: JSON.stringify({ newPassword }),
+      });
+      const data = await res.text();
+      return data;
+    } catch (error) {
+      return "Error resetting password.";
+    }
   };
 
   return (
-    <AuthContext.Provider value={{ user, register, signin, signout }}>  
+    <AuthContext.Provider value={{ user, register, signin, signout, getUser, profile ,ForgotPassword, ResetPassword }}>  
     {children}
 </AuthContext.Provider>
   );

@@ -1,0 +1,177 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(240, 240, 240);
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+.all-service {
+    background-color: rgb(194, 194, 199);
+    padding: 2rem 0;
+    text-align: center;
+    padding-top: 5rem;
+    width: 100%;
+    padding-bottom: 10rem;
+}
+
+/* Heading Section */
+.ser-head {
+    width: 90%;
+    max-width: 390px;
+    margin: 0 auto;
+    border-radius: 50px 8px;
+    color: rgb(49, 6, 37);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.ser-head h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+/* All Event Section */
+.All-event {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    height: auto;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Event Container */
+.event-container {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    margin: auto;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* Event Card */
+.event-card {
+    width: 100%;
+    max-width: 300px;
+    background-color: rgb(49, 6, 37);
+    border: 1px solid #ccc;
+    box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 1rem 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+}
+
+/* Event Card Image */
+.event-card img {
+    width: 100%;
+    height: 200px;
+    max-width: 250px;
+    object-fit: cover;
+    padding-top: 1rem;
+}
+
+/* Event Card Heading */
+.event-card h3 {
+    color: rgb(233, 219, 32);
+    margin-top: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Responsive Design */
+
+/* Large Screens (1024px and above) */
+@media (max-width: 1024px) {
+    .ser-head h1 {
+        font-size: 2.2rem;
+    }
+
+    .All-event {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .event-container {
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .event-card {
+        width: 45%;
+        max-width: 250px;
+    }
+}
+
+/* Tablets (Max Width: 768px) */
+@media (max-width: 768px) {
+    .ser-head h1 {
+        font-size: 1.8rem;
+    }
+
+    .All-event {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .event-card {
+        width: 80%;
+        max-width: 350px;
+    }
+
+    .event-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Small Mobile Devices (Max Width: 480px) */
+@media (max-width: 480px) {
+    .ser-head h1 {
+        font-size: 1.6rem;
+    }
+
+    .All-event {
+        padding: 1rem;
+    }
+
+    .event-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .event-card h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Extra Small Devices (Max Width: 320px) */
+@media (max-width: 320px) {
+    .ser-head h1 {
+        font-size: 1.4rem;
+    }
+
+    .All-event {
+        padding: 0.5rem;
+    }
+
+    .event-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .event-card h3 {
+        font-size: 0.9rem;
+    }
+}

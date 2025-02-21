@@ -4,14 +4,24 @@ import './index.css'
 import App from './App.tsx'
 import { BrowserRouter } from 'react-router-dom'
 import { Authprovider } from './context/auathcontext.tsx'
+import { ServiceProvider} from './context/serviceContext.tsx'
+import { GoogleOAuthProvider } from '@react-oauth/google'
+import { BookingProvider } from './context/bookingContext.tsx'
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Authprovider>
+    <GoogleOAuthProvider clientId='60011035406-htg63fael73evv5usops26t4rkkisuc2.apps.googleusercontent.com'>
+    <ServiceProvider>
+      <BookingProvider>
+        <Authprovider>
     <BrowserRouter>
     <App />
     </BrowserRouter>
     </Authprovider>
+    </BookingProvider>
+    </ServiceProvider>
+    </GoogleOAuthProvider>
   </StrictMode>,
 )
 

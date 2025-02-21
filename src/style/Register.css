@@ -1,0 +1,149 @@
+.form-container {
+    display: flex;
+    width: 100;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("/home/kugan/Documents/Final Project Front End/user/src/assets/decorations-made-chrysanthemums-threads-stand-along-glance-path-dark-hall_1304-3398.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+.form-header {
+    font-size: 5rem; /* Adjust for smaller screens */
+    text-align: start;
+    color: white;
+    margin: 10px 0;
+}
+
+.form-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+}
+
+input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+}
+
+.register-btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    background-color: #e60023;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.register-btn:hover {
+    background-color: #c5001a;
+}
+
+.or-divider {
+    margin: 15px 0;
+    font-size: 14px;
+    color: #888;
+}
+
+.google-btn {
+    margin-left: 90px;
+}
+
+.login-text {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.login-text a {
+    color: #e60023;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile View */
+@media (max-width: 767px) {
+    .form-header {
+        font-size: 3rem; /* Adjust for small screens */
+    }
+
+    .form-box {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .register-btn {
+        font-size: 14px;
+    }
+
+    .or-divider {
+        font-size: 12px;
+    }
+
+    .google-btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Tablet View */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .form-header {
+        font-size: 4rem;
+    }
+
+    .form-box {
+        width: 80%;
+    }
+
+    .register-btn {
+        font-size: 15px;
+    }
+
+    .or-divider {
+        font-size: 13px;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+    .form-header {
+        font-size: 5rem;
+    }
+
+    .form-box {
+        width: 45%;
+    }
+
+    .register-btn {
+        font-size: 16px;
+    }
+}

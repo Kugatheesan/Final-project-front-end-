@@ -1,64 +1,66 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: rgb(240, 240, 240);
+    margin: 0;
+    padding: 0;
 }
 
+/* Main Container */
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgb(202, 199, 199);
     width: 100%;
-    padding: 40px;
+    padding: 5%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     gap: 50px;
-    flex-wrap: wrap;
-    height: auto; /* Changed to auto for better flexibility */
 }
 
-/* Image Styling */
+/* Image Section */
 .image-container {
     flex: 1;
     display: flex;
     justify-content: center;
-    max-width: 500px;
-    margin-bottom: 150px;
+    max-width: 100%;
 }
 
 .image-container img {
     width: 100%;
-    max-width: 450px; /* Controls max size */
+    max-width: 450px;
     height: auto;
     border-radius: 10px;
 }
 
-/* Text Section Styling */
+/* Text Section */
 .text-container {
     flex: 1;
     background: #0b3c4d;
-    color: white;
     padding: 30px;
-    max-width: 400px;
+    max-width: 45%;
     border-radius: 5px;
-    text-align: center;
-    margin-top: 150px;
+    text-align: start;
+    color: white;
 }
 
 .text-container h2 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
+    color: white;
+    text-shadow: 2px 2px 4px #fa0404, -2px -2px 4px #0000ff;
 }
 
 .text-container p {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;
+    color: #dcdcdc;
 }
 
 .button {
     display: inline-block;
-    background: #e91e63;
+    background: linear-gradient(to right, #e91e63, #9c27b0, #673ab7);
     color: white;
     padding: 12px 24px;
     text-decoration: none;
@@ -68,17 +70,30 @@ body {
 }
 
 .button:hover {
-    background: #c2185b;
+    background: linear-gradient(to right, #c2185b, #7b1fa2, #512da8);
 }
 
-/* Responsive Design */
+/* Large Screens (Desktops) */
+@media (min-width: 1025px) {
+    .container {
+        flex-direction: row; /* Keep the original layout for large screens */
+    }
+
+    .image-container {
+        margin-bottom: 50px;
+    }
+
+    .text-container {
+        margin-top: 200px;
+    }
+}
 
 /* Tablets (Max Width: 1024px) */
 @media (max-width: 1024px) {
     .container {
         flex-direction: column;
         text-align: center;
-        padding: 30px 20px;
+        padding: 40px 20px;
     }
 
     .image-container img {
@@ -86,22 +101,8 @@ body {
     }
 
     .text-container {
-        max-width: 90%;
-    }
-}
-
-/* Mobile Devices (Max Width: 768px) */
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-
-    .image-container img {
-        max-width: 85%;
-    }
-
-    .text-container {
-        padding: 20px;
+        max-width: 80%;
+        margin-top: 40px; /* Adjust margin-top for smaller tablets */
     }
 
     .button {
@@ -109,10 +110,31 @@ body {
     }
 }
 
-/* Small Mobile (Max Width: 480px) */
+/* Small Tablets & Mobile Devices (Max Width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    .image-container img {
+        max-width: 90%;
+    }
+
+    .text-container {
+        max-width: 90%;
+        padding: 20px;
+        margin-top: 20px; /* Adjust margin-top */
+    }
+
+    .button {
+        padding: 10px 20px;
+    }
+}
+
+/* Small Mobile Devices (Max Width: 480px) */
 @media (max-width: 480px) {
     .container {
-        padding: 15px;
+        padding: 20px;
     }
 
     .image-container img {
@@ -122,6 +144,7 @@ body {
     .text-container {
         max-width: 100%;
         padding: 15px;
+        margin-top: 10px; /* Adjust margin-top for mobile */
     }
 
     .text-container h2 {
@@ -141,15 +164,15 @@ body {
 /* Extra Small Devices (Max Width: 320px) */
 @media (max-width: 320px) {
     .text-container h2 {
-        font-size: 18px; /* Smaller heading for very small screens */
+        font-size: 18px;
     }
 
     .text-container p {
-        font-size: 12px; /* Smaller paragraph text */
+        font-size: 12px;
     }
 
     .button {
-        padding: 6px 12px; /* Adjust button size */
-        font-size: 12px; /* Adjust button text size */
+        padding: 6px 12px;
+        font-size: 12px;
     }
 }
