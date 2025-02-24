@@ -9,7 +9,6 @@ interface User{
 }
 interface AuthContexType{
     user:User|null;
-    // lodaing:Boolean;
     register:(username:string,email:string, password:string) => Promise<void>
     signin:(username:string,password:string ) => Promise<void>
     signout:() => Promise<void>
@@ -23,7 +22,6 @@ const AuthContext= createContext<AuthContexType|undefined>(undefined)
 export const Authprovider:React.FC<{children:ReactNode }> = ({children})=>{
     const [user ,setUser]=useState<User|null>(null);
     const [ profile, setProfile] = useState({ username: '' });
-    // const [lodaing, setLoading] = useState(false)
   const register = async (username:string,email:string,password:string)=>{
    
     if(!username || !password || !email) {
@@ -64,16 +62,12 @@ export const Authprovider:React.FC<{children:ReactNode }> = ({children})=>{
   const signin = async (username:string,password:string) => { 
    
     try{
-      // const loading =  setLoading(true)
-      // console.log(loading)
       const response = await axios.post('http://localhost:3000/api/users/login', {
         username,
          password
       }, {
         withCredentials: true
       })
-    //  const loding1 =  setLoading(false)
-    //  console.log(loding1)
       
       console.log("loginUser:", response)
     }

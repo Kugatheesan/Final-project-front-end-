@@ -14,12 +14,12 @@ function Signin() {
     const navigate = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+        e.preventDefault(); //default refresh cancel
 
         try {
-            const response = await axios.post("http://localhost:3000/api/users/login", 
+            const response = await axios.post("http://localhost:3000/api/users/login", //API request sent the backend login
                 { username, password }, 
-                { withCredentials: true }
+                { withCredentials: true } //cookies save in browser
             );
 
             if (response.status === 200) {
@@ -34,8 +34,35 @@ function Signin() {
             }
         } catch (error) {
             toast.error("Invalid username or password!", { theme: "dark", autoClose: 2000 });
+            setTimeout(() => {
+                setUsername("");
+                setPassword("");
+                navigate("/signin");
+                window.location.reload(); //page reload then update the page
+            }, 2000);
         }
     };
+
+    // const handleGoogleLoginSuccess = async (credentialResponse: any) => {
+    //     try {
+    //     const decoded = jwtDecode(credentialResponse.credential);
+    //     console.log('Google User Info:', decoded);
+    //     // Send the token to your backend for authentication
+    //     const response = await api.post('/auth/google-login', {
+    //     token: credentialResponse.credential,
+    //     });
+    //     console.log('Login Successful:', response.data);
+    //     toast.success('Google Login Successful');
+    //     // Store token and navigate
+    //     Cookies.set('token', response.data.token, { expires: 1 });
+    //     setToken(response.data.token);
+    //     setIsAuthenticated(true);
+    //     onClose();
+    //     } catch (error) {
+    //     console.error('Google Login Error:', error);
+    //     toast.error('Google Login Failed');
+    //     }
+    //     };
 
     return (
         <div className="signin-shape">

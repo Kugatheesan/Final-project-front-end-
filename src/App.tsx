@@ -12,7 +12,7 @@ import Family from "./commponts/Family";
 import Television from "./commponts/Television ";
 import Signin from "./commponts/Signin";
 import ForgotPassword from "./commponts/ ForgotPassword";
-import ResetPassword from "./commponts/ResetPassword";
+import { ToastContainer } from "react-toastify";
 
 function App() {
     return (
@@ -25,13 +25,26 @@ function App() {
                 <Route path="/service/corporate" element={<Corporate />} />
                 <Route path="/service/family" element={<Family />} />
                 <Route path="/service/television" element={<Television />} />
-                <Route path="/booking" element={<Booking />} />
+                <Route path="/booking" element={<Booking />} />   
                 <Route path="/register" element={<Register />} />
                 <Route path="/signin" element={<Signin />} />
                 <Route path="/forgot" element={<ForgotPassword onCancel={() => {}} />} />
-                <Route path="/reset-password" element={<ResetPassword />} />
+              
             </Routes>
             <Footer />
+
+            <ToastContainer 
+                position="top-right"
+                autoClose={3000} // Closes toast in 3 seconds
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </>
     );
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../style/ForgotPassword.css";
 
 interface ForgotPasswordProps {
@@ -8,33 +9,33 @@ interface ForgotPasswordProps {
 export function ForgotPassword({ onCancel }: ForgotPasswordProps) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [showOtpPopup, setShowOtpPopup] = useState(false);
-  const [showResetPopup, setShowResetPopup] = useState(false);
+  const [showOtpPopup, setShowOtpPopup] = useState(false); //OTP popup not show in false 
   const [otp, setOtp] = useState("");
+  const [showResetPopup, setShowResetPopup] = useState(false);
   const [newPassword, setNewPassword] = useState("");
-  const [step, setStep] = useState("email"); // Track the current step
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const res = await fetch("http://localhost:3000/api/users/forgot-password", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        headers: { "Content-Type": "application/json" },    //sent the json format ,sent the alert before
+        body: JSON.stringify({ email }), // sent the email object in json format
       });
-      const data = await res.text();
+
+      const data = await res.text(); //save the meesage to server
       setMessage(data);
 
-      if (res.ok) { 
-        setShowOtpPopup(true);
-        setStep("otp"); // Move to OTP step
+      if (res.ok) {
+        setShowOtpPopup(true); //sent the OTP ,so setShowOtpPopup is true ,OTP page show thu popup
       }
     } catch (error) {
-      setMessage("Error sending OTP.");
+      setMessage("Error sending OTP."); //not set the otp ,and show the meesage
     }
   };
 
-  const handleOtpSubmit = async () => {
+  const handleOtpSubmit = async () => {   //check the OTP ,in sent the server
     try {
       const res = await fetch("http://localhost:3000/api/users/verify-otp", {
         method: "POST",
@@ -44,8 +45,7 @@ export function ForgotPassword({ onCancel }: ForgotPasswordProps) {
 
       if (res.ok) {
         setShowOtpPopup(false); // Close OTP popup
-        setShowResetPopup(true); // Open Reset Password popup
-        setStep("reset-password"); // Move to Reset Password step
+        setShowResetPopup(true); // Show Reset Password popup
       } else {
         setMessage("Invalid OTP. Please try again.");
       }
@@ -54,18 +54,21 @@ export function ForgotPassword({ onCancel }: ForgotPasswordProps) {
     }
   };
 
-  const handleResetPassword = async () => {
+  const handleResetPassword = async () => {  //sent the new password to server
     try {
       const res = await fetch("http://localhost:3000/api/users/reset-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp, newPassword }),
       });
-
+  
       if (res.ok) {
-        alert("Password reset successfully!");
-        setShowResetPopup(false); // Close Reset Password popup
-        setStep("email"); // Reset to initial step
+        alert("Password reset successfully!"); // Show success message
+        setShowResetPopup(false);
+  
+        onCancel();
+        // Redirect to Sign In page after clicking "OK" on alert
+        navigate('/signin');
       } else {
         setMessage("Error resetting password.");
       }
@@ -73,10 +76,11 @@ export function ForgotPassword({ onCancel }: ForgotPasswordProps) {
       setMessage("Error resetting password.");
     }
   };
+  
 
   return (
     <div className="forgot-password-wrapper">
-      {step === "email" && (
+      {!showOtpPopup && (
         <>
           <h2 className="forgot-password-title">Forgot Password</h2>
           <form onSubmit={handleSubmit} className="forgot-password-form">
@@ -88,15 +92,18 @@ export function ForgotPassword({ onCancel }: ForgotPasswordProps) {
               required
               className="forgot-password-input"
             />
-            <button type="submit" className="forgot-password-button">Send OTP</button>
+            <button type="submit" className="forgot-password-button">
+              Send OTP
+            </button>
           </form>
           {message && <p className="forgot-password-message">{message}</p>}
-
-          <button onClick={onCancel} className="forgot-password-cancel">Cancel</button>
+          <button onClick={onCancel} className="forgot-password-cancel">
+            Cancel
+          </button>
         </>
       )}
 
-      {/* OTP Popup - Close after Verify OTP */}
+      {/* OTP Popup */}
       {showOtpPopup && (
         <div className="otp-popup">
           <div className="otp-content">
@@ -108,12 +115,14 @@ export function ForgotPassword({ onCancel }: ForgotPasswordProps) {
               onChange={(e) => setOtp(e.target.value)}
               className="otp-input"
             />
-            <button onClick={handleOtpSubmit} className="otp-submit-button">Verify OTP</button>
+            <button onClick={handleOtpSubmit} className="otp-submit-button">
+              Verify OTP
+            </button>
           </div>
         </div>
       )}
 
-      {/* Reset Password Popup - Open when OTP is verified */}
+      {/* Reset Password Popup */}
       {showResetPopup && (
         <div className="reset-popup">
           <div className="reset-content">
@@ -125,7 +134,9 @@ export function ForgotPassword({ onCancel }: ForgotPasswordProps) {
               onChange={(e) => setNewPassword(e.target.value)}
               className="reset-password-input"
             />
-            <button onClick={handleResetPassword} className="reset-submit-button">Reset Password</button>
+            <button onClick={handleResetPassword} className="reset-submit-button">
+              Reset Password
+            </button>
           </div>
         </div>
       )}

@@ -1,24 +1,24 @@
 import '../style/Register.css';
 import { UseAuth } from '../context/auathcontext';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';    //input feild state decide
+import { useNavigate } from 'react-router-dom'; //change the page
 import { GoogleLogin } from '@react-oauth/google'
 
 function MyForm() {
-    const { register } = UseAuth();
-    const [username, setUsername] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const navigate = useNavigate();
+    const { register } = UseAuth(); // call register function in authcontext.tsx
+    const [username, setUsername] = useState<string>(''); //username -username store ,setUsername-state update, ('')-start input feild empty value
+    const [password, setPassword] = useState<string>(''); // ''
+    const [email, setEmail] = useState<string>(''); //''
+    const navigate = useNavigate(); //change the page
 
     const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        register(username, email, password);
-        alert("Register in successful!");
-        setUsername('');
-        setPassword('');
-        setEmail('');
-        navigate('/');
+        e.preventDefault(); // default form reload to prevent
+        register(username, email, password); //user insert the data
+        alert("Register in successful!"); //alert message
+        setUsername(''); //form field emty(reset)
+        setPassword(''); // ''
+        setEmail(''); // ''
+        navigate('/'); // navigate in home page
     };
 
     return (
@@ -46,7 +46,7 @@ function MyForm() {
                         console.log("goolge login sucesss",CredentialResponse);
                     }}
                         onError={() => {
-                            console.log('LOgin Failed');
+                            console.log('Login Failed');
                         }}
                     />
                 </div>
