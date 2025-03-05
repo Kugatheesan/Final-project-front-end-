@@ -11,7 +11,7 @@ import { BookingProvider } from './context/bookingContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <GoogleOAuthProvider clientId='60011035406-htg63fael73evv5usops26t4rkkisuc2.apps.googleusercontent.com'>
+    <GoogleOAuthProvider clientId='60011035406-5ljsr1dm4796vqk3bmvq5quigfd9agsc.apps.googleusercontent.com'>
     <ServiceProvider>
       <BookingProvider>
         <Authprovider>

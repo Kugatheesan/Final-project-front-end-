@@ -2,7 +2,11 @@ import '../style/Register.css';
 import { UseAuth } from '../context/auathcontext';
 import { useState } from 'react';    //input feild state decide
 import { useNavigate } from 'react-router-dom'; //change the page
-import { GoogleLogin } from '@react-oauth/google'
+// import { GoogleLogin } from '@react-oauth/google'
+// import { jwtDecode } from 'jwt-decode';
+// import axios from 'axios';
+// import Cookies from 'js-cookie';
+// import { toast } from 'react-toastify';
 
 function MyForm() {
     const { register } = UseAuth(); // call register function in authcontext.tsx
@@ -20,6 +24,30 @@ function MyForm() {
         setEmail(''); // ''
         navigate('/'); // navigate in home page
     };
+
+    // const handleGoogleLoginSuccess = async (credentialResponse: any) => {
+    //     try {
+    //         const decoded = jwtDecode(credentialResponse.credential);
+    //         console.log('Google User Info:', decoded);
+
+    //         // Send the token to your backend for authentication
+    //         const response = await axios.post('/auth/google-login', {
+    //             token: credentialResponse.credential,
+    //         });
+    //         console.log('Login Successful:', response.data);
+    //         toast.success('Google Login Successful');
+
+    //         // Store token and navigate
+    //         Cookies.set('token', response.data.token, { expires: 1 });
+    //         setToken(response.data.token);
+    //         setIsAuthenticated(true);
+    //         onclose();
+    //     } catch (error) {
+    //         console.error('Google Login Error:', error);
+    //         toast.error('Google Login Failed');
+    //     }
+    // };
+
 
     return (
         <div className="form-container">
@@ -42,13 +70,10 @@ function MyForm() {
                 </form>
                 <div className="or-divider">OR</div>
                 <div className="google-btn">
-                    <GoogleLogin onSuccess={CredentialResponse => {
-                        console.log("goolge login sucesss",CredentialResponse);
-                    }}
-                        onError={() => {
-                            console.log('Login Failed');
-                        }}
-                    />
+                    {/* <GoogleLogin
+                        onSuccess={handleGoogleLoginSuccess}
+                        onError={() => toast.error('Google Sign-In Failed')}
+                    /> */}
                 </div>
                 <p className="login-text">Already a member? <a href="/signin">Sign in</a></p>
             </div>
@@ -57,3 +82,11 @@ function MyForm() {
 }
 
 export default MyForm;
+function setToken(token: any) {
+    throw new Error('Function not implemented.');
+}
+
+function setIsAuthenticated(arg0: boolean) {
+    throw new Error('Function not implemented.');
+}
+

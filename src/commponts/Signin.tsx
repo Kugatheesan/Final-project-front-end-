@@ -6,6 +6,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import ForgotPassword from "../commponts/ ForgotPassword"; // Import the ForgotPassword component
+import Cookies from 'js-cookie';
+
+import {jwtDecode} from "jwt-decode"; 
+
 
 function Signin() {
     const [username, setUsername] = useState<string>("");
@@ -18,7 +22,7 @@ function Signin() {
 
         try {
             const response = await axios.post("http://localhost:3000/api/users/login", //API request sent the backend login
-                { username, password }, 
+                { username, password },
                 { withCredentials: true } //cookies save in browser
             );
 
@@ -43,26 +47,28 @@ function Signin() {
         }
     };
 
-    // const handleGoogleLoginSuccess = async (credentialResponse: any) => {
-    //     try {
-    //     const decoded = jwtDecode(credentialResponse.credential);
-    //     console.log('Google User Info:', decoded);
-    //     // Send the token to your backend for authentication
-    //     const response = await api.post('/auth/google-login', {
-    //     token: credentialResponse.credential,
-    //     });
-    //     console.log('Login Successful:', response.data);
-    //     toast.success('Google Login Successful');
-    //     // Store token and navigate
-    //     Cookies.set('token', response.data.token, { expires: 1 });
-    //     setToken(response.data.token);
-    //     setIsAuthenticated(true);
-    //     onClose();
-    //     } catch (error) {
-    //     console.error('Google Login Error:', error);
-    //     toast.error('Google Login Failed');
-    //     }
-    //     };
+    const handleGoogleLoginSuccess = async (credentialResponse: any) => {
+        try {
+            const decoded = jwtDecode(credentialResponse.credential);
+            console.log('Google User Info:', decoded);
+
+            // Send the token to your backend for authentication
+            const response = await axios.post('http://localhost:3000/api/google-login', {
+                token: credentialResponse.credential,
+            });
+            console.log('Login Successful:', response.data);
+            toast.success('Google Login Successful');
+
+            // Store token and navigate
+            Cookies.set('token', response.data.token, { expires: 1 });
+            setToken(response.data.token);
+            setIsAuthenticated(true);
+            onclose();
+        } catch (error) {
+            console.error('Google Login Error:', error);
+            toast.error('Google Login Failed');
+        }
+    };
 
     return (
         <div className="signin-shape">
@@ -89,11 +95,8 @@ function Signin() {
                 <br />
                 <div className="google-login">
                     <GoogleLogin
-                        onSuccess={(CredentialResponse) => {
-                            console.log(CredentialResponse);
-                            navigate("/");
-                        }}
-                        onError={() => console.log("Login Failed")}
+                        onSuccess={handleGoogleLoginSuccess}
+                        onError={() => toast.error('Google Sign-In Failed')}
                     />
                 </div>
 
@@ -104,7 +107,7 @@ function Signin() {
             </div>
 
             {/* Modal for Forgot Password */}
-            {showForgotPassword  && (
+            {showForgotPassword && (
                 <div className="modal-overlay">
                     <div className="modal-content">
                         <button className="close-btn" onClick={() => setShowForgotPassword(false)}>✖</button>
@@ -119,3 +122,14 @@ function Signin() {
 }
 
 export default Signin;
+function setToken(token: any) {
+    throw new Error("Function not implemented.");
+}
+
+function setIsAuthenticated(arg0: boolean) {
+    throw new Error("Function not implemented.");
+}
+
+function jwtDecode(credential: void) {
+    throw new Error("Function not implemented.");
+}

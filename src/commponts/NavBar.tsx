@@ -24,7 +24,7 @@ function NavBar() {
   return (
     <div className="nav-Page">
       <div className="nav-left">
-        <img src={banner} width={80} />
+        <img src={banner} />
       </div>
 
       <div className="nav-center">
